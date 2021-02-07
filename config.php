@@ -2,8 +2,6 @@
 <?php
 
 session_start();
-// $username = "admin"; 
-// $password = "1234"; 
 $db_host = 'localhost';
 $db_user = 'root';
 $db_pass = '';

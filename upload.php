@@ -2,12 +2,12 @@
 
 include("config.php");
 
-if( $_POST["poz"] != "" and $_POST["sirket"] != "" and $_POST["sehir"] != "" and $_POST["aciklama"] != "")	{
+if( $_POST["poz"] != "" and $_POST["company"] != "" and $_POST["city"] != "" and $_POST["definition"] != "")	{
 	if($_FILES["logo"]["name"] == ""){
 		$_FILES["logo"]["name"] = "default.png" ;
 	}
 
-	$owner = $_SESSION["kullanici"];
+	$owner = $_SESSION["user"];
 	$target_dir = "uploads/";
 	$target_file = $target_dir . basename($_FILES["logo"]["name"]);
 
@@ -28,13 +28,13 @@ if( $_POST["poz"] != "" and $_POST["sirket"] != "" and $_POST["sehir"] != "" and
 	
 	$blob = $_FILES["logo"]["name"] /* || move_uploaded_file($_FILES["logo"]["tmp_name"], "uploads/default.png") */;
     $pos = $_POST["poz"];
-    $comp = $_POST["sirket"];
-    $sehir = $_POST["sehir"];
-	$aciklama = $_POST["aciklama"];
+    $comp = $_POST["company"];
+    $city = $_POST["city"];
+	$definition = $_POST["definition"];
 	
 	echo $blob;
 
-	$sql = "INSERT INTO isler(foto, pozisyon, sirket, sehir, aciklama, owner) VALUES ('".$blob."','".$pos."','".$comp."','".$sehir."','".$aciklama."','".$owner."')";
+	$sql = "INSERT INTO jobs(photo, position, company, city, definition, owner) VALUES ('".$blob."','".$pos."','".$comp."','".$city."','".$definition."','".$owner."')";
 
 	if(mysqli_query($conn, $sql)) {
 		header("Location:index.php");

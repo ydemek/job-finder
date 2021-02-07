@@ -4,16 +4,16 @@
 
     if ($_REQUEST['term']) { 
         $term = $_REQUEST['term']; 
-        $check_query = mysqli_query($conn, "SELECT * FROM isler WHERE pozisyon LIKE '%".$term."%'");
+        $check_query = mysqli_query($conn, "SELECT * FROM jobs WHERE position LIKE '%".$term."%'");
         $check_row = mysqli_fetch_array($check_query);
         if ($check_row) { 
-            $query = mysqli_query($conn, "SELECT * FROM isler WHERE pozisyon LIKE '%".$term."%'");
+            $query = mysqli_query($conn, "SELECT * FROM jobs WHERE position LIKE '%".$term."%'");
             while ($row = mysqli_fetch_array($query)){
-                $blob = $row['foto'];
-                $pos = $row['pozisyon'];
-                $comp = $row['sirket'];
-                $sehir = $row['sehir'];
-                $aciklama = $row['aciklama'];
+                $blob = $row['photo'];
+                $pos = $row['position'];
+                $comp = $row['company'];
+                $city = $row['city'];
+                $definition = $row['definition'];
                 
                 $productHTML = '';
                 $productHTML .= '<div class="card mt-3 shadow">';
@@ -25,8 +25,8 @@
 				$productHTML .= '</div>';
 				$productHTML .= '<div class="col-8">';
 				$productHTML .= '<h5>'.$comp.'</h5>';
-				$productHTML .= '<h6>Şehir : '.$sehir.'</h6>';
-				$productHTML .= '<h6>Açıklama : '.$aciklama.'</h6>';
+				$productHTML .= '<h6>City : '.$city.'</h6>';
+				$productHTML .= '<h6>Definition : '.$definition.'</h6>';
 				$productHTML .= '</div>';
 				$productHTML .= '</div>';
 				$productHTML .= '</div>';
@@ -37,7 +37,7 @@
         }
 
         else{
-            echo '<li class="list-group-item">Eşleşen kayıt bulunamadı.</li>';
+            echo '<li class="list-group-item">There is no match..</li>';
         }
     }
 ?>

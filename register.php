@@ -2,9 +2,9 @@
 
 include("config.php"); 
 
-if($_POST["kullanici"] != "" and $_POST["parola"] != "") {
-	$uname = mysqli_real_escape_string($conn,$_POST['kullanici']);
-    $pass = mysqli_real_escape_string($conn,$_POST['parola']);
+if($_POST["user"] != "" and $_POST["password"] != "") {
+	$uname = mysqli_real_escape_string($conn,$_POST['user']);
+    $pass = mysqli_real_escape_string($conn,$_POST['password']);
 	$sql = "INSERT INTO users(username, password) VALUES ('".$uname."','".$pass."')";
 
     if(mysqli_query($conn, $sql)) {
@@ -18,8 +18,8 @@ if($_POST["kullanici"] != "" and $_POST["parola"] != "") {
 }
 
 else {
-	echo "Alanlar boş bırakılamaz.<br>"; 
-	echo "<a href='login.php'>Geri dön</a>";
+	echo "Fields can not be empty..<br>"; 
+	echo "<a href='login.php'><button class='btn btn-info'>Go Back</button></a>";
 }
     
 ?> 

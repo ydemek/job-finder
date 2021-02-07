@@ -44,7 +44,7 @@ session_start();
   </script>
 
 
-  <title>İş Arama Portalı</title>
+  <title>Job Lister</title>
 
 </head>
 
@@ -52,8 +52,8 @@ session_start();
   <div class="container">
     <div class="row mt-3 d-flex flex-row justify-content-between">
         <div class="col-8 search-box">
-          <h4>İş Arama Portalı</h4>
-          <input type="text" class="form-control " autocomplete="off" placeholder="Pozisyon arayın..." />
+          <h4>Job Lister</h4>
+          <input type="text" class="form-control " autocomplete="off" placeholder="Search position..." />
           <ul class="list-group liveresult"></ul>
           <ul class="result_view" id="result_list">
 
@@ -67,18 +67,18 @@ session_start();
                   </a>' 
                   .
                   '<a href="logout.php">
-                    <input type="button" value="Çıkış yap" class="btn btn-danger ml-2 mt-4"/>
+                    <input type="button" value="Logout" class="btn btn-danger ml-2 mt-4"/>
                    </a>';
-          } else if (isset($_SESSION["kullanici"])) {
+          } else if (isset($_SESSION["user"])) {
             echo  '<a href="user.php">
-                    <input type="button" value="Profil" class="btn btn-primary mr-2 mt-4"/>
+                    <input type="button" value="Profile" class="btn btn-primary mr-2 mt-4"/>
                   </a>' 
                   .
                   '<a href="logout.php">
-                    <input type="button" value="Çıkış yap" class="btn btn-danger mt-4"/>
+                    <input type="button" value="Logout" class="btn btn-danger mt-4"/>
                    </a>';
           } else {
-            echo '<a href="login.php"><input type="button" value="Giriş yap" class="btn btn-primary mt-4"/></a>';
+            echo '<a href="login.php"><input type="button" value="Login" class="btn btn-primary mt-4"/></a>';
           }
           ?>
         </div>

@@ -1,10 +1,9 @@
 <?php 
 
 include("config.php"); 
-
-if($_POST["kullanici"] != "" and $_POST["parola"] != "") {
-	$uname = mysqli_real_escape_string($conn,$_POST['kullanici']);
-    $pass = mysqli_real_escape_string($conn,$_POST['parola']);
+if($_POST["user"] != "" and $_POST["password"] != "") {
+	$uname = mysqli_real_escape_string($conn,$_POST['user']);
+    $pass = mysqli_real_escape_string($conn,$_POST['password']);
 	$sql_query = "select count(*) as cntUser from users where username='".$uname."' and password='".$pass."'";
     $result = mysqli_query($conn,$sql_query);
     $row = mysqli_fetch_array($result);
@@ -14,29 +13,29 @@ if($_POST["kullanici"] != "" and $_POST["parola"] != "") {
     if($count > 0) {
 		if($uname == "admin") {
 			$_SESSION["admin"] = true; 
-			$_SESSION["kullanici"] = $uname; 
-			$_SESSION["parola"] = $pass; 
+			$_SESSION["user"] = $uname; 
+			$_SESSION["password"] = $pass; 
 			header("Location:admin.php");
 		}
 		
 		else {
 		    $_SESSION['user'] = $uname;
-			$_SESSION["kullanici"] = $uname; 
-			$_SESSION["parola"] = $pass;
+			$_SESSION["user"] = $uname; 
+			$_SESSION["password"] = $pass;
 		    header('Location: user.php');
 		}	
 	}
 	 
 
 	else {
-		echo "Kullanıcı adı veya parola yanlış.<br>"; 
-		echo "<a href='login.php'><button class='btn btn-info'>Geri Dön</button></a>";
+		echo "Username or password incorrect.<br>"; 
+		echo "<a href='login.php'><button class='btn btn-info'>Go Back</button></a>";
 	}
 }
 
 else {
-	echo "Alanlar boş bırakılamaz.<br>"; 
-	echo "<a href='login.php'><button class='btn btn-info'>Geri Dön</button></a>";
+	echo "Fields can not be empty..<br>"; 
+	echo "<a href='login.php'><button class='btn btn-info'>Go Back</button></a>";
 }
     
 ?> 
