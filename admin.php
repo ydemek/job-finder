@@ -102,7 +102,7 @@ if (!isset($_SESSION["admin"])) {
 								$productHTML .= '<div class="col-3">';
 								$productHTML .= '</div>';
 								$productHTML .= '<div class="col-3">';
-								$productHTML .= '<input type="button" class="search-box btn btn-danger" id="'.$name.'" value="Kullanıcıyı sil" />';
+								$productHTML .= '<input type="button" class="search-box btn btn-danger" id="'.$name.'" value="Delete" />';
 								$productHTML .= '</div>';
 								$productHTML .= '</div>';
 
