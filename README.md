@@ -9,7 +9,7 @@ A simple web app which implements auto suggestion, posting and listing with PHP.
 
 Two steps needed to make it work:
 * An Apache server to serve app
-* A relational DBMS like MySQL to export sample SQL file
+* A relational DBMS like MySQL to import sample SQL file
 
 ## :camera: Screenshots
 
