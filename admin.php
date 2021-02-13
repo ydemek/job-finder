@@ -29,12 +29,12 @@ if (!isset($_SESSION["admin"])) {
 			<div class="col-10 search-box mt-3 ">
 				<h4>Management</h4>
 				<div class="tab">
-					<button class="tablinks btn btn-outline-primary mr-1" onclick="openCity(event, 'My Advertisements')" id="defaultOpen">My Advertisements</button>
-					<button class="tablinks btn btn-outline-primary mr-1" onclick="openCity(event, 'Add Advertisement')">Add Advertisement</button>
+					<button class="tablinks btn btn-outline-primary mr-1" onclick="openCity(event, 'My Posts')" id="defaultOpen">My Posts</button>
+					<button class="tablinks btn btn-outline-primary mr-1" onclick="openCity(event, 'Add Post')">Add Post</button>
 					<button class="tablinks btn btn-outline-primary" onclick="openCity(event, 'Users')">Users</button>
 				</div>
 
-				<div id="My Advertisements" class="tabcontent w-100">
+				<div id="My Posts" class="tabcontent w-100">
 					<?php
 					$sql = "SELECT * FROM jobs WHERE owner='" . $_SESSION["user"] . "'";
 					$query = mysqli_query($conn, $sql);
@@ -68,7 +68,7 @@ if (!isset($_SESSION["admin"])) {
 					?>
 				</div>
 
-				<div id="Add Advertisement" class="tabcontent mt-3 w-50">
+				<div id="Add Post" class="tabcontent mt-3 w-50">
 					<form method="post" action="upload.php" enctype="multipart/form-data">
 						<div id="div_ilan">
 							<input class="form-control mb-2" type="file"  id="logo" name="logo"></input>
@@ -97,7 +97,7 @@ if (!isset($_SESSION["admin"])) {
 								$productHTML .= '<div class="item row shadow p-2 mt-3 align-items-center w-50" style="border-radius: 10px;">';
 								$productHTML .= '<div class="col-6">';
 								$productHTML .= '<h6><strong>User Name: </strong>'.$name.'</h6>';
-								$productHTML .= '<h6><b>Password: </b>'.$pass.'</h6>';
+								$productHTML .= '<h6><b>Password: </b>****</h6>';
 								$productHTML .= '</div>';
 								$productHTML .= '<div class="col-3">';
 								$productHTML .= '</div>';
@@ -160,7 +160,7 @@ if (!isset($_SESSION["admin"])) {
 				<?php
 				if (isset($_SESSION["user"])) {
 					echo '<a href="index.php">
-					<button type="button" class="btn btn-primary mr-1">All Advertisements </button>
+					<button type="button" class="btn btn-primary mr-1">All Posts </button>
 					</a>' . '<a href="logout.php"><button type="button" class="btn btn-danger">Logout</button></a>';
 				}
 				?>
