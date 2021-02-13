@@ -13,10 +13,10 @@ Two steps needed to make it work:
 
 ## :camera: Screenshots
 
-<img src="screenshots/1.png" height ="32%" width="32%"></img> 
-<img src="screenshots/2.png" height ="32%" width="32%"></img> 
-<img src="screenshots/3.png" height ="32%" width="32%"></img>
-<img src="screenshots/3.png" height ="32%" width="32%"></img>
-<img src="screenshots/3.png" height ="32%" width="32%"></img>
-<img src="screenshots/3.png" height ="32%" width="32%"></img>
-<img src="screenshots/3.png" height ="32%" width="32%"></img>
+<img src="screenshots/1.png" height ="100%" width="97%"></img>
+<img src="screenshots/2.png" height ="33%" width="32%"></img>
+<img src="screenshots/3.png" height ="33%" width="32%"></img>
+<img src="screenshots/4.png" height ="33%" width="32%"></img>
+<img src="screenshots/5.png" height ="33%" width="32%"></img>
+<img src="screenshots/6.png" height ="33%" width="32%"></img>
+<img src="screenshots/7.png" height ="33%" width="32%"></img>
